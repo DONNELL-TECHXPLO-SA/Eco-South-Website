@@ -6,6 +6,8 @@ import gallerySpatial from "@/assets/gallery-spatial-1.jpg";
 import galleryGis from "@/assets/gallery-gis-1.jpg";
 import galleryCommunity from "@/assets/gallery-community-1.jpg";
 
+const HERO_VIDEO = "https://cdn.jsdelivr.net/gh/Eugene-TechXplo-SA/videosforwebsites@main/Drone_flying_over_small_town_202606101031.mp4";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -41,12 +43,14 @@ function HomePage() {
     <SiteLayout overHero>
       {/* Hero */}
       <section className="relative isolate min-h-[100svh] overflow-hidden">
-        <img
-          src={heroAerial}
-          alt="Aerial view of fields meeting a town at golden hour in South Africa"
+        <video
+          src={HERO_VIDEO}
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={heroAerial}
           className="absolute inset-0 h-full w-full object-cover"
-          width={1920}
-          height={1080}
         />
         <div className="absolute inset-0 bg-[image:var(--gradient-hero)]" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/70 via-ink/40 to-transparent" />
