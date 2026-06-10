@@ -10,6 +10,13 @@ import {
   Workflow,
 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import service1 from "@/assets/service-1-spatial.jpg";
+import service2 from "@/assets/service-2-gis.jpg";
+import service3 from "@/assets/service-3-infra.jpg";
+import service4 from "@/assets/service-4-social.jpg";
+import service5 from "@/assets/service-5-env.jpg";
+import service6 from "@/assets/service-6-rural.jpg";
+import service7 from "@/assets/service-7-pm.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -26,6 +33,7 @@ export const Route = createFileRoute("/services")({
 const SERVICES = [
   {
     icon: Compass,
+    image: service1,
     title: "Strategic Spatial Planning",
     items: [
       "Metropolitan and Regional Spatial Development Frameworks (MSDF/RSDF)",
@@ -35,6 +43,7 @@ const SERVICES = [
   },
   {
     icon: Database,
+    image: service2,
     title: "GIS & Spatial Data Analysis",
     items: [
       "Advanced Geospatial Modelling and Data Visualisation",
@@ -44,6 +53,7 @@ const SERVICES = [
   },
   {
     icon: Building2,
+    image: service3,
     title: "Urban Infrastructure & Mobility",
     items: [
       "Bulk Services and Engineering Coordination",
@@ -53,6 +63,7 @@ const SERVICES = [
   },
   {
     icon: Users,
+    image: service4,
     title: "Social Engineering & Engagement",
     items: [
       "Community Participation and Co-design",
@@ -62,6 +73,7 @@ const SERVICES = [
   },
   {
     icon: Leaf,
+    image: service5,
     title: "Environmental Stewardship",
     items: [
       "Ecological Integrity Assessments",
@@ -71,6 +83,7 @@ const SERVICES = [
   },
   {
     icon: MapPin,
+    image: service6,
     title: "Regional & Rural Development",
     items: [
       "Township Revitalisation Plans",
@@ -80,6 +93,7 @@ const SERVICES = [
   },
   {
     icon: Workflow,
+    image: service7,
     title: "Project Management & Implementation",
     items: [
       "Statutory Approvals and Compliance",
