@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-new.png";
 
 export function Footer() {
   return (
@@ -9,10 +9,7 @@ export function Footer() {
       <div className="container-page grid gap-12 py-16 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Eco South Partnership" className="h-10 w-auto bg-white/95 rounded-md p-1" />
-            <span className="text-lg font-bold">
-              Eco South <span className="text-primary-glow">Partnership</span>
-            </span>
+            <img src={logo} alt="Eco South Partnership" className="h-12 w-auto" />
           </div>
           <p className="mt-5 max-w-md text-sm leading-relaxed text-ink-foreground/70">
             Balancing architectural precision with environmental stewardship.
