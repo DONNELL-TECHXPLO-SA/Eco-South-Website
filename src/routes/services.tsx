@@ -124,37 +124,55 @@ function ServicesPage() {
         </div>
       </section>
 
-      {/* Service stack */}
+      {/* Service stack — alternating text + image */}
       <section className="bg-background">
-        <div className="container-page py-20">
-          <div className="grid gap-px overflow-hidden rounded-3xl border border-border bg-border">
-            {SERVICES.map((s, i) => (
+        <div className="container-page space-y-24 py-24 lg:space-y-32 lg:py-32">
+          {SERVICES.map((s, i) => {
+            const imageRight = i % 2 === 0;
+            return (
               <div
                 key={s.title}
-                className="grid gap-8 bg-card p-8 sm:p-10 lg:grid-cols-[120px_1fr_1.4fr] lg:gap-12"
+                className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20"
               >
-                <div className="flex items-start gap-4 lg:flex-col lg:gap-6">
-                  <span className="font-mono text-sm text-primary">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-primary">
-                    <s.icon className="h-6 w-6" strokeWidth={1.6} />
-                  </span>
+                <div className={imageRight ? "lg:order-1" : "lg:order-2"}>
+                  <div className="flex items-center gap-4">
+                    <span className="font-mono text-lg text-primary">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="h-px w-12 bg-primary/40" />
+                  </div>
+                  <div className="mt-5 flex items-center gap-4">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent text-primary">
+                      <s.icon className="h-5 w-5" strokeWidth={1.6} />
+                    </span>
+                    <h2 className="text-3xl font-bold leading-tight text-primary sm:text-4xl">
+                      {s.title}
+                    </h2>
+                  </div>
+                  <ul className="mt-8 space-y-4">
+                    {s.items.map((item) => (
+                      <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed text-foreground/85">
+                        <span className="mt-1 text-primary">+</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div>
-                  <h2 className="text-2xl font-bold leading-tight sm:text-3xl">{s.title}</h2>
+                <div className={imageRight ? "lg:order-2" : "lg:order-1"}>
+                  <div className="overflow-hidden rounded-2xl shadow-elevated">
+                    <img
+                      src={s.image}
+                      alt={s.title}
+                      loading="lazy"
+                      width={1024}
+                      height={1024}
+                      className="aspect-[4/3] h-full w-full object-cover transition duration-700 hover:scale-105"
+                    />
+                  </div>
                 </div>
-                <ul className="space-y-3">
-                  {s.items.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed text-foreground/85">
-                      <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-primary" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </section>
 
