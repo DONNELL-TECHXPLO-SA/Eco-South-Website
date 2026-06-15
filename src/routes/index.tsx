@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Building2, Compass, Database, Leaf, MapPin, Users } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Compass, Database, Users, Briefcase, Layers, Route as LucideRoute, FileCheck } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import heroAerial from "@/assets/hero-aerial.jpg";
 import gallerySpatial from "@/assets/gallery-spatial-1.jpg";
@@ -23,18 +23,19 @@ export const Route = createFileRoute("/")({
 });
 
 const PILLARS = [
-  { icon: Compass, label: "Strategic Spatial Planning", copy: "Metropolitan and regional frameworks, master plans and precinct strategy." },
-  { icon: Database, label: "GIS & Spatial Data", copy: "Advanced geospatial modelling, land-use audits and asset mapping." },
-  { icon: Building2, label: "Urban Infrastructure", copy: "Bulk services planning, mobility corridors and transit-oriented design." },
-  { icon: Users, label: "Social Engineering", copy: "Community participation, equity diagnostics and stakeholder facilitation." },
-  { icon: Leaf, label: "Environmental Stewardship", copy: "Ecological integrity, climate resilience and restorative urbanism." },
-  { icon: MapPin, label: "Regional Development", copy: "Township revitalisation, rural nodes and dual-locality strategy." },
+  { icon: Compass, label: "Strategic Spatial Town Planning & Urban Regeneration", copy: "Statutory applications, land use management, township economies, and urban regeneration consulting." },
+  { icon: Database, label: "Advanced GIS Services & Spatial Data Analytics", copy: "Geospatial modelling, site selection, mapping, database management, and high-end visualisation." },
+  { icon: Users, label: "Development, Social Facilitation & Participatory Creation", copy: "Social facility and infrastructure planning, capacity building, and community engagement." },
+  { icon: Briefcase, label: "Economic Development & Practice Consulting", copy: "Investment facilitation, local economic sustainability, market analysis, and development strategies." },
+  { icon: Layers, label: "Survey Technology & Sub-Surface Mapping", copy: "Non-intrusive underground infrastructure assessment and geological risk mitigation." },
+  { icon: LucideRoute, label: "Transport Planning", copy: "Movement networks, integration, and accessibility supporting spatial transformation." },
+  { icon: FileCheck, label: "Conveyancing Support Services", copy: "Administrative coordination, property transfer support, and land-use statutory compliance." },
 ];
 
 const STATS = [
   { value: "7", label: "Service Pillars" },
   { value: "2", label: "Regional Hubs" },
-  { value: "20+", label: "Years Practice" },
+  { value: "10+", label: "Years Practice" },
   { value: "SACPLAN", label: "Registered" },
 ];
 
@@ -46,7 +47,8 @@ function HomePage() {
         <video
           src={HERO_VIDEO}
           autoPlay
-          muted
+          muted={true}
+          defaultMuted
           loop
           playsInline
           poster={heroAerial}
@@ -148,7 +150,7 @@ function HomePage() {
           </div>
 
           <div className="mt-14 grid gap-px overflow-hidden rounded-2xl bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
-            {PILLARS.map((p, i) => (
+            {PILLARS.slice(0, 6).map((p, i) => (
               <div key={p.label} className="group relative bg-ink p-8 transition hover:bg-white/[0.04]">
                 <span className="text-xs font-mono text-primary-glow/80">
                   {String(i + 1).padStart(2, "0")} —

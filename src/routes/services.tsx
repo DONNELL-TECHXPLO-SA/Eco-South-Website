@@ -1,28 +1,28 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
-  Building2,
   Compass,
   Database,
-  Leaf,
-  MapPin,
   Users,
-  Workflow,
+  Briefcase,
+  Layers,
+  Route as LucideRoute,
+  FileCheck,
 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import service1 from "@/assets/service-1-spatial.jpg";
 import service2 from "@/assets/service-2-gis.jpg";
 import service3 from "@/assets/service-3-infra.jpg";
 import service4 from "@/assets/service-4-social.jpg";
-import service5 from "@/assets/service-5-env.jpg";
 import service6 from "@/assets/service-6-rural.jpg";
 import service7 from "@/assets/service-7-pm.jpg";
+import serviceTransport from "@/assets/gallery-transport-1.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       { title: "Services — Eco South Partnership" },
-      { name: "description", content: "Seven service pillars: strategic spatial planning, GIS, urban infrastructure, social engineering, environmental stewardship, regional development, and project implementation." },
+      { name: "description", content: "Seven service pillars: spatial planning, GIS analytics, development & social facilitation, practice consulting, survey tech & sub-surface mapping, transport planning, and conveyancing support." },
       { property: "og:title", content: "Our Core Service Pillars — Eco South Partnership" },
       { property: "og:description", content: "Expert consultancy integrating technical rigor with environmental stewardship." },
     ],
@@ -34,71 +34,68 @@ const SERVICES = [
   {
     icon: Compass,
     image: service1,
-    title: "Strategic Spatial Planning",
+    title: "Strategic Spatial Town Planning & Urban Regeneration",
     items: [
-      "Metropolitan and Regional Spatial Development Frameworks (MSDF/RSDF)",
-      "Urban Design and Precision Master Planning",
-      "Precinct Plans and Local Area Development Strategies",
+      "Statutory Planning & Land Use Management (rezonings, subdivisions, township establishments)",
+      "Township Economies & Integration",
+      "Urban Regeneration Consulting",
     ],
   },
   {
     icon: Database,
     image: service2,
-    title: "GIS & Spatial Data Analysis",
+    title: "Advanced GIS Services & Spatial Data Analytics",
     items: [
-      "Advanced Geospatial Modelling and Data Visualisation",
-      "Land-Use Management Systems and Audits",
-      "Infrastructure Asset Mapping and Condition Reporting",
-    ],
-  },
-  {
-    icon: Building2,
-    image: service3,
-    title: "Urban Infrastructure & Mobility",
-    items: [
-      "Bulk Services and Engineering Coordination",
-      "Transit-Oriented Development and Mobility Corridors",
-      "Public Realm and Streetscape Design",
+      "Spatial Modelling & Site Selection",
+      "Mapping & High-End Visualisation",
+      "Data Acquisition & Database Management",
     ],
   },
   {
     icon: Users,
     image: service4,
-    title: "Social Engineering & Engagement",
+    title: "Development, Social Facilitation & Participatory Creation",
     items: [
-      "Community Participation and Co-design",
-      "Equity Diagnostics and Stakeholder Facilitation",
-      "Township Empowerment Programmes",
+      "Social Facility & Infrastructure Planning",
+      "Capacity Building",
+      "Community Engagement & Conflict Resolution",
     ],
   },
   {
-    icon: Leaf,
-    image: service5,
-    title: "Environmental Stewardship",
-    items: [
-      "Ecological Integrity Assessments",
-      "Climate Resilience & Adaptation Planning",
-      "Restorative Urbanism Strategy",
-    ],
-  },
-  {
-    icon: MapPin,
+    icon: Briefcase,
     image: service6,
-    title: "Regional & Rural Development",
+    title: "Economic Development & Practice Consulting",
     items: [
-      "Township Revitalisation Plans",
-      "Rural Node Development and Tenure Studies",
-      "Dual-Locality Coordination (Sandton + Eastern Cape)",
+      "Investment Facilitation",
+      "Sustainable Local Economies",
+      "Market Analysis & Strategy",
     ],
   },
   {
-    icon: Workflow,
-    image: service7,
-    title: "Project Management & Implementation",
+    icon: Layers,
+    image: service3,
+    title: "Survey Technology, Infrastructure Intelligence & Sub-Surface Mapping",
     items: [
-      "Statutory Approvals and Compliance",
-      "Multi-disciplinary Team Coordination",
-      "Monitoring, Evaluation and Reporting",
+      "Non-intrusive underground infrastructure and geological assessment",
+      "Supports land-use applications and development risk mitigation",
+    ],
+  },
+  {
+    icon: LucideRoute,
+    image: serviceTransport,
+    title: "Transport Planning",
+    items: [
+      "Integration, accessibility and economic inclusion",
+      "Movement networks that support spatial transformation and local economic development",
+    ],
+  },
+  {
+    icon: FileCheck,
+    image: service7,
+    title: "Conveyancing Support Services",
+    items: [
+      "Administrative, spatial and development coordination for property transactions (non-legal land administration and property transfer support)",
+      "Facilitating statutory compliance for land-use planning and development approvals",
     ],
   },
 ];

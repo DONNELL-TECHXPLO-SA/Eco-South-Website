@@ -3,16 +3,20 @@ import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import aboutHero from "@/assets/about-hero.jpg";
 import aboutStory from "@/assets/Our Story.jpeg";
-import team1 from "@/assets/team-1.jpg";
-import team2 from "@/assets/team-2.jpg";
-import team3 from "@/assets/team-3.jpg";
-import team4 from "@/assets/team-4.jpg";
+import teamMawethu from "@/assets/team-mawethu.png";
+import teamNelisiwe from "@/assets/team-nelisiwe.png";
+import teamSimphiwe from "@/assets/team-simphiwe.png";
+import teamSiyabonga from "@/assets/team-siyabonga.png";
+import teamNothemba from "@/assets/team-nothemba.png";
+import teamZimasa from "@/assets/team-zimasa.png";
+import teamLuyolo from "@/assets/team-luyolo.png";
+import teamNdumiso from "@/assets/team-ndumiso.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About Us — Eco South Partnership" },
-      { name: "description", content: "Two decades refining a practice that treats every blueprint as a contract with the future. Our story, vision, mission and team." },
+      { name: "description", content: "Our story, vision, mission and team of town planners, spatial designers, and social facilitators." },
       { property: "og:title", content: "About Us — Eco South Partnership" },
       { property: "og:description", content: "At the centre of the built environment — our story, vision and specialist leadership." },
       { property: "og:image", content: aboutHero },
@@ -22,11 +26,28 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
 });
 
-const TEAM = [
-  { img: team1, name: "Dr. Elias Thorne", role: "Managing Partner", tag: "Leadership" },
-  { img: team2, name: "Sarah Mbeki", role: "Lead Urbanist", tag: "Spatial Planning" },
-  { img: team3, name: "Marcus Chen", role: "Systems Director", tag: "Technical Data" },
-  { img: team4, name: "Noni Gwala", role: "Community Principal", tag: "Social Engineering" },
+const LEADERSHIP_TEAM = [
+  {
+    img: teamMawethu,
+    name: "Mawethu Pepu",
+    role: "Principal Professional Planner",
+    tag: "Leadership & Strategic Direction",
+    credentials: "SACPLAN Registered",
+    bio: "Oversees all high-level project frameworks, ensuring every spatial intervention is legally robust, ethically grounded, and strategically aligned with national and provincial development goals."
+  }
+];
+
+const PLANNING_TEAM = [
+  { img: teamNelisiwe, name: "Nelisiwe Ngcobo", role: "Town Planner", details: "Statutory Applications, Urban Design & Frameworks, Policy Analysis" },
+  { img: teamSimphiwe, name: "Simphiwe Mnguni", role: "Town Planner", details: "Statutory Applications, Urban Design & Frameworks, Policy Analysis" },
+  { img: teamSiyabonga, name: "Siyabonga Ncube", role: "Town Planner", details: "Statutory Applications, Urban Design & Frameworks, Policy Analysis" }
+];
+
+const SOCIAL_TEAM = [
+  { img: teamNothemba, name: "Nothemba Pepu", role: "Community & Social Facilitation" },
+  { img: teamZimasa, name: "Zimasa Ncobela", role: "Community & Social Facilitation" },
+  { img: teamLuyolo, name: "Luyolo Joja", role: "Community & Social Facilitation" },
+  { img: teamNdumiso, name: "Ndumiso Pepu", role: "Community & Social Facilitation" }
 ];
 
 function AboutPage() {
@@ -89,18 +110,14 @@ function AboutPage() {
           <div className="grid gap-px overflow-hidden rounded-3xl bg-white/10 md:grid-cols-2">
             <div className="bg-ink p-10 sm:p-14">
               <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-glow">Our Vision</span>
-              <p className="mt-6 text-2xl font-semibold leading-snug sm:text-3xl">
-                To define the global gold standard for restorative urbanism —
-                where built structures act as regenerative anchors for both
-                human communities and natural ecosystems.
+              <p className="mt-6 text-xl font-semibold leading-relaxed sm:text-2xl text-white/95">
+                To be a reliable and strategic think-tank and credible rural and urban partner that influences, lobbies, advises, incubates, researches and implements rural and peri-urban policy developmental programmes in order to change the face of cities, town centres and villages of South Africa.
               </p>
             </div>
             <div className="bg-ink p-10 sm:p-14">
               <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-glow">Our Mission</span>
-              <p className="mt-6 text-2xl font-semibold leading-snug sm:text-3xl">
-                To provide technically rigorous consultancy that synthesises
-                data-driven spatial planning with social engineering to create
-                resilient, equitable, and sustainable habitats.
+              <p className="mt-6 text-xl font-semibold leading-relaxed sm:text-2xl text-white/95">
+                To serve as a strategic partner at the centre of the built environment, driving spatial and socio-economic transformation through customised, practical and implementable development solutions.
               </p>
             </div>
           </div>
@@ -108,37 +125,99 @@ function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="bg-background">
+      <section className="bg-background border-t border-border">
         <div className="container-page py-24">
           <div className="max-w-2xl">
             <span className="eyebrow">The Partnership</span>
-            <h2 className="mt-3 text-4xl font-bold leading-tight sm:text-5xl">Specialist Leadership</h2>
+            <h2 className="mt-3 text-4xl font-bold leading-tight sm:text-5xl">Our Specialist Team</h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              A multidisciplinary team uniting urban design, geospatial science,
-              technical engineering and community practice.
+              A multidisciplinary practice combining strategic planning, urban design, and social facilitation.
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {TEAM.map((m) => (
-              <article key={m.name} className="group relative overflow-hidden rounded-3xl bg-ink">
-                <img
-                  src={m.img}
-                  alt={m.name}
-                  loading="lazy"
-                  className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                  <span className="inline-flex rounded-full bg-primary/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em]">
-                    {m.tag}
-                  </span>
-                  <h3 className="mt-3 text-xl font-semibold">{m.name}</h3>
-                  <p className="text-sm text-white/75">{m.role}</p>
+          {/* Leadership & Strategic Direction */}
+          <div className="mt-16">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-primary border-b border-primary/20 pb-3 mb-8">
+              Leadership & Strategic Direction
+            </h3>
+            {LEADERSHIP_TEAM.map((m) => (
+              <div key={m.name} className="grid gap-8 rounded-3xl border border-border bg-card p-6 md:grid-cols-12 md:p-10 items-center shadow-sm">
+                <div className="md:col-span-4 overflow-hidden rounded-2xl aspect-[4/5] shadow-elevated">
+                  <img src={m.img} alt={m.name} className="h-full w-full object-cover transition duration-700 hover:scale-105" />
                 </div>
-              </article>
+                <div className="md:col-span-8 flex flex-col justify-center">
+                  <div className="flex flex-wrap gap-2 items-center">
+                    <span className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-primary">
+                      {m.tag}
+                    </span>
+                    <span className="inline-flex rounded-full bg-emerald-500/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700">
+                      {m.credentials}
+                    </span>
+                  </div>
+                  <h4 className="mt-4 text-3xl font-bold text-foreground">{m.name}</h4>
+                  <p className="text-lg font-medium text-primary mt-1">{m.role}</p>
+                  <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+                    {m.bio}
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
+
+          {/* Spatial Planning & Design Core */}
+          <div className="mt-20">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-primary border-b border-primary/20 pb-3 mb-8">
+              Spatial Planning & Design Core
+            </h3>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {PLANNING_TEAM.map((m) => (
+                <article key={m.name} className="group relative overflow-hidden rounded-3xl bg-ink shadow-md">
+                  <img
+                    src={m.img}
+                    alt={m.name}
+                    loading="lazy"
+                    className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+                    <span className="inline-flex rounded-full bg-primary/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em]">
+                      {m.role}
+                    </span>
+                    <h4 className="mt-3 text-xl font-semibold">{m.name}</h4>
+                    <p className="text-xs text-white/70 mt-1.5 leading-relaxed">{m.details}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* Social Engineering & Field Operations */}
+          <div className="mt-20">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-primary border-b border-primary/20 pb-3 mb-8">
+              Social Engineering & Field Operations
+            </h3>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {SOCIAL_TEAM.map((m) => (
+                <article key={m.name} className="group relative overflow-hidden rounded-3xl bg-ink shadow-md">
+                  <img
+                    src={m.img}
+                    alt={m.name}
+                    loading="lazy"
+                    className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+                    <span className="inline-flex rounded-full bg-primary/95 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em]">
+                      Field Operations
+                    </span>
+                    <h4 className="mt-3 text-lg font-semibold">{m.name}</h4>
+                    <p className="text-xs text-white/75 mt-1">{m.role}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 
