@@ -1,0 +1,1 @@
+const s="/Eco-South-Website/assets/gallery-spatial-1-4J3rMf1z.jpg",a="/Eco-South-Website/assets/gallery-gis-1-DNTREQh-.jpg",t="/Eco-South-Website/assets/gallery-community-1-BiSrXhNP.jpg";export{a,t as b,s as g};
