@@ -1,21 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
+"use client";
+
 import { useState, type FormEvent } from "react";
 import { Clock, Leaf, Mail, MapPin, Phone, Send } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Eco South Partnership" },
-      { name: "description", content: "Brief us on a municipality, development, or community project. Offices in Sandton and the Eastern Cape." },
-      { property: "og:title", content: "Contact — Eco South Partnership" },
-      { property: "og:description", content: "Let's build the next chapter — together." },
-    ],
-  }),
-  component: ContactPage,
-});
-
-function ContactPage() {
+export default function ContactPage() {
   const [sent, setSent] = useState(false);
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {

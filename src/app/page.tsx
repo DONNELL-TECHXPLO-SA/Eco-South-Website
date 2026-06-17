@@ -1,5 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Compass, Database, Users, Briefcase, Layers, Route as LucideRoute, FileCheck } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, Compass, Database, Users, Briefcase, Layers, Route, FileCheck } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import heroAerial from "@/assets/hero-aerial.jpg";
 import gallerySpatial from "@/assets/gallery-spatial-1.jpg";
@@ -8,19 +8,10 @@ import galleryCommunity from "@/assets/gallery-community-1.jpg";
 
 const HERO_VIDEO = "https://cdn.jsdelivr.net/gh/Eugene-TechXplo-SA/videosforwebsites@main/Drone_flying_over_small_town_202606101031.mp4";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Eco South Partnership — Reimagine Cities, Towns & Villages" },
-      { name: "description", content: "Multidisciplinary urban and rural planning consultancy bridging spatial vision and practical project implementation across Southern Africa." },
-      { property: "og:title", content: "Eco South Partnership — Reimagine Cities, Towns & Villages" },
-      { property: "og:description", content: "Spatial planning, GIS, infrastructure and social engineering for resilient South African habitats." },
-      { property: "og:image", content: heroAerial },
-      { name: "twitter:image", content: heroAerial },
-    ],
-  }),
-  component: HomePage,
-});
+export const metadata = {
+  title: "Eco South Partnership — Reimagine Cities, Towns & Villages",
+  description: "Multidisciplinary urban and rural planning consultancy bridging spatial vision and practical project implementation across Southern Africa.",
+};
 
 const PILLARS = [
   { icon: Compass, label: "Strategic Spatial Town Planning & Urban Regeneration", copy: "Statutory applications, land use management, township economies, and urban regeneration consulting." },
@@ -28,18 +19,18 @@ const PILLARS = [
   { icon: Users, label: "Development, Social Facilitation & Participatory Creation", copy: "Social facility and infrastructure planning, capacity building, and community engagement." },
   { icon: Briefcase, label: "Economic Development & Practice Consulting", copy: "Investment facilitation, local economic sustainability, market analysis, and development strategies." },
   { icon: Layers, label: "Survey Technology & Sub-Surface Mapping", copy: "Non-intrusive underground infrastructure assessment and geological risk mitigation." },
-  { icon: LucideRoute, label: "Transport Planning", copy: "Movement networks, integration, and accessibility supporting spatial transformation." },
+  { icon: Route, label: "Transport Planning", copy: "Movement networks, integration, and accessibility supporting spatial transformation." },
   { icon: FileCheck, label: "Conveyancing Support Services", copy: "Administrative coordination, property transfer support, and land-use statutory compliance." },
 ];
 
 const STATS = [
   { value: "7", label: "Service Pillars" },
   { value: "2", label: "Regional Hubs" },
-  { value: "10+", label: "Years Practice" },
+  { value: "20+", label: "Years Practice" },
   { value: "SACPLAN", label: "Registered" },
 ];
 
-function HomePage() {
+export default function HomePage() {
   return (
     <SiteLayout overHero>
       {/* Hero */}
@@ -48,10 +39,9 @@ function HomePage() {
           src={HERO_VIDEO}
           autoPlay
           muted={true}
-          defaultMuted
           loop
           playsInline
-          poster={heroAerial}
+          poster={heroAerial.src}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-[image:var(--gradient-hero)]" />
@@ -76,14 +66,14 @@ function HomePage() {
 
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
-              to="/services"
+              href="/services"
               className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground shadow-elevated transition hover:bg-primary-glow"
             >
               Explore Our Services
               <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
             </Link>
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-full border border-white/30 px-7 py-4 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10"
             >
               Contact Our Team
@@ -120,7 +110,7 @@ function HomePage() {
               resilient, equitable, and sustainable habitats.
             </p>
             <Link
-              to="/about"
+              href="/about"
               className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-glow"
             >
               Read our story <ArrowUpRight className="h-4 w-4" />
@@ -142,7 +132,7 @@ function HomePage() {
               </h2>
             </div>
             <Link
-              to="/services"
+              href="/services"
               className="inline-flex w-fit items-center gap-2 rounded-full border border-white/25 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/10"
             >
               All services <ArrowUpRight className="h-4 w-4" />
@@ -175,7 +165,7 @@ function HomePage() {
               </h2>
             </div>
             <Link
-              to="/gallery"
+              href="/gallery"
               className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-primary hover:text-primary-glow"
             >
               View the gallery <ArrowUpRight className="h-4 w-4" />
@@ -185,19 +175,19 @@ function HomePage() {
           <div className="mt-12 grid gap-5 md:grid-cols-6 md:grid-rows-2">
             <FeatureCard
               className="md:col-span-4 md:row-span-2"
-              img={gallerySpatial}
+              img={gallerySpatial.src}
               tag="Spatial Planning"
               title="Metropolitan Development Framework — Sandton North"
             />
             <FeatureCard
               className="md:col-span-2"
-              img={galleryGis}
+              img={galleryGis.src}
               tag="GIS & Data"
               title="Land-Use Heatmap Visualisation"
             />
             <FeatureCard
               className="md:col-span-2"
-              img={galleryCommunity}
+              img={galleryCommunity.src}
               tag="Community"
               title="Participatory Planning Workshop — Rural Node"
             />
@@ -218,7 +208,7 @@ function HomePage() {
               </div>
               <div className="flex flex-col gap-3 lg:items-end">
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-semibold text-primary shadow-soft transition hover:bg-white/90"
                 >
                   Start a project <ArrowRight className="h-4 w-4" />

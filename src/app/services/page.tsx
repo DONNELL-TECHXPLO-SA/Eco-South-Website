@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import Link from "next/link";
 import {
   ArrowRight,
   Compass,
@@ -6,7 +6,7 @@ import {
   Users,
   Briefcase,
   Layers,
-  Route as LucideRoute,
+  Route,
   FileCheck,
 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
@@ -18,17 +18,10 @@ import service6 from "@/assets/service-6-rural.jpg";
 import service7 from "@/assets/service-7-pm.jpg";
 import serviceTransport from "@/assets/gallery-transport-1.jpg";
 
-export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Services — Eco South Partnership" },
-      { name: "description", content: "Seven service pillars: spatial planning, GIS analytics, development & social facilitation, practice consulting, survey tech & sub-surface mapping, transport planning, and conveyancing support." },
-      { property: "og:title", content: "Our Core Service Pillars — Eco South Partnership" },
-      { property: "og:description", content: "Expert consultancy integrating technical rigor with environmental stewardship." },
-    ],
-  }),
-  component: ServicesPage,
-});
+export const metadata = {
+  title: "Services — Eco South Partnership",
+  description: "Seven service pillars: spatial planning, GIS analytics, development & social facilitation, practice consulting, survey tech & sub-surface mapping, transport planning, and conveyancing support.",
+};
 
 const SERVICES = [
   {
@@ -81,7 +74,7 @@ const SERVICES = [
     ],
   },
   {
-    icon: LucideRoute,
+    icon: Route,
     image: serviceTransport,
     title: "Transport Planning",
     items: [
@@ -100,7 +93,7 @@ const SERVICES = [
   },
 ];
 
-function ServicesPage() {
+export default function ServicesPage() {
   return (
     <SiteLayout>
       {/* Page header */}
@@ -111,7 +104,7 @@ function ServicesPage() {
             — Our Capabilities
           </span>
           <h1 className="mt-4 max-w-3xl text-5xl font-bold leading-[1.05] sm:text-6xl">
-            Our Core Service Pillars
+            Our Core Service Service Pillars
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-foreground/75">
             Expert consultancy integrating technical rigor with environmental
@@ -158,7 +151,7 @@ function ServicesPage() {
                 <div className={imageRight ? "lg:order-2" : "lg:order-1"}>
                   <div className="overflow-hidden rounded-2xl shadow-elevated">
                     <img
-                      src={s.image}
+                      src={s.image.src}
                       alt={s.title}
                       loading="lazy"
                       width={1024}
@@ -184,7 +177,7 @@ function ServicesPage() {
               </p>
             </div>
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition hover:bg-primary-glow"
             >
               Start a conversation <ArrowRight className="h-4 w-4" />

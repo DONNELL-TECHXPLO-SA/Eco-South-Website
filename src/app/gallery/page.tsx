@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+"use client";
+
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
@@ -10,18 +11,6 @@ import infra1 from "@/assets/gallery-infra-1.jpg";
 import infra2 from "@/assets/gallery-infra-2.jpg";
 import transport1 from "@/assets/gallery-transport-1.jpg";
 
-export const Route = createFileRoute("/gallery")({
-  head: () => ({
-    meta: [
-      { title: "Project Gallery — Eco South Partnership" },
-      { name: "description", content: "A curated selection of spatial plans, GIS visualisations, community engagements, and infrastructure assessments from across South Africa." },
-      { property: "og:title", content: "Project Gallery — Eco South Partnership" },
-      { property: "og:description", content: "Selected work spanning spatial planning, GIS, community, transport and infrastructure." },
-    ],
-  }),
-  component: GalleryPage,
-});
-
 type Category = "Spatial Planning" | "GIS & Data" | "Community" | "Transport" | "Infrastructure";
 
 const PROJECTS: Array<{
@@ -31,18 +20,18 @@ const PROJECTS: Array<{
   location: string;
   year: string;
 }> = [
-  { img: spatial1, category: "Spatial Planning", title: "Metropolitan Development Framework", location: "Sandton North", year: "2025" },
-  { img: gis1, category: "GIS & Data", title: "Land-Use Heatmap Visualisation", location: "Gauteng", year: "2025" },
-  { img: community1, category: "Community", title: "Participatory Planning Workshop", location: "Rural Node, EC", year: "2024" },
-  { img: spatial2, category: "Spatial Planning", title: "Wetland-Edge Residential Plan", location: "Eastern Cape", year: "2024" },
-  { img: infra2, category: "Infrastructure", title: "Bulk Services Cross-Section Study", location: "Port Elizabeth", year: "2024" },
-  { img: infra1, category: "Infrastructure", title: "Heritage Precinct Revitalisation", location: "East London", year: "2023" },
-  { img: transport1, category: "Transport", title: "BRT Corridor Streetscape", location: "Sandton CBD", year: "2024" },
+  { img: spatial1.src, category: "Spatial Planning", title: "Metropolitan Development Framework", location: "Sandton North", year: "2025" },
+  { img: gis1.src, category: "GIS & Data", title: "Land-Use Heatmap Visualisation", location: "Gauteng", year: "2025" },
+  { img: community1.src, category: "Community", title: "Participatory Planning Workshop", location: "Rural Node, EC", year: "2024" },
+  { img: spatial2.src, category: "Spatial Planning", title: "Wetland-Edge Residential Plan", location: "Eastern Cape", year: "2024" },
+  { img: infra2.src, category: "Infrastructure", title: "Bulk Services Cross-Section Study", location: "Port Elizabeth", year: "2024" },
+  { img: infra1.src, category: "Infrastructure", title: "Heritage Precinct Revitalisation", location: "East London", year: "2023" },
+  { img: transport1.src, category: "Transport", title: "BRT Corridor Streetscape", location: "Sandton CBD", year: "2024" },
 ];
 
 const TABS: Array<"All" | Category> = ["All", "Spatial Planning", "GIS & Data", "Community", "Transport", "Infrastructure"];
 
-function GalleryPage() {
+export default function GalleryPage() {
   const [active, setActive] = useState<(typeof TABS)[number]>("All");
   const [q, setQ] = useState("");
 

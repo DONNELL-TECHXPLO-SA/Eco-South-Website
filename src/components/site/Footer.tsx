@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import logo from "@/assets/logo-new.png";
 
@@ -9,7 +9,7 @@ export function Footer() {
       <div className="container-page grid gap-12 py-16 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Eco South Partnership" className="h-12 w-auto" />
+            <img src={logo.src} alt="Eco South Partnership" className="h-12 w-auto" />
           </div>
           <p className="mt-5 max-w-md text-sm leading-relaxed text-ink-foreground/70">
             Balancing architectural precision with environmental stewardship.
@@ -33,7 +33,7 @@ export function Footer() {
               { to: "/contact", label: "Contact" },
             ].map((l) => (
               <li key={l.to}>
-                <Link to={l.to} className="text-ink-foreground/80 transition hover:text-primary-glow">
+                <Link href={l.to} className="text-ink-foreground/80 transition hover:text-primary-glow">
                   {l.label}
                 </Link>
               </li>

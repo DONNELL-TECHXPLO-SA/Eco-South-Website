@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import aboutHero from "@/assets/about-hero.jpg";
@@ -12,19 +12,10 @@ import teamZimasa from "@/assets/team-zimasa.png";
 import teamLuyolo from "@/assets/team-luyolo.png";
 import teamNdumiso from "@/assets/team-ndumiso.png";
 
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Us — Eco South Partnership" },
-      { name: "description", content: "Our story, vision, mission and team of town planners, spatial designers, and social facilitators." },
-      { property: "og:title", content: "About Us — Eco South Partnership" },
-      { property: "og:description", content: "At the centre of the built environment — our story, vision and specialist leadership." },
-      { property: "og:image", content: aboutHero },
-      { name: "twitter:image", content: aboutHero },
-    ],
-  }),
-  component: AboutPage,
-});
+export const metadata = {
+  title: "About Us — Eco South Partnership",
+  description: "Our story, vision, mission and team of town planners, spatial designers, and social facilitators.",
+};
 
 const LEADERSHIP_TEAM = [
   {
@@ -50,13 +41,13 @@ const SOCIAL_TEAM = [
   { img: teamNdumiso, name: "Ndumiso Pepu", role: "Community & Social Facilitation" }
 ];
 
-function AboutPage() {
+export default function AboutPage() {
   return (
     <SiteLayout overHero>
       {/* Hero */}
       <section className="relative isolate h-[80svh] min-h-[560px] overflow-hidden">
         <img
-          src={aboutHero}
+          src={aboutHero.src}
           alt="Aerial cityscape at golden hour"
           className="absolute inset-0 h-full w-full object-cover"
           width={1920}
@@ -80,7 +71,7 @@ function AboutPage() {
           <div className="lg:col-span-5">
             <div className="overflow-hidden rounded-3xl">
               <img
-                src={aboutStory}
+                src={aboutStory.src}
                 alt="Office window onto city skyline with blueprints on desk"
                 className="h-full w-full object-cover"
                 loading="lazy"
@@ -143,7 +134,7 @@ function AboutPage() {
             {LEADERSHIP_TEAM.map((m) => (
               <div key={m.name} className="grid gap-8 rounded-3xl border border-border bg-card p-6 md:grid-cols-12 md:p-10 items-center shadow-sm">
                 <div className="md:col-span-4 overflow-hidden rounded-2xl aspect-[4/5] shadow-elevated">
-                  <img src={m.img} alt={m.name} className="h-full w-full object-cover transition duration-700 hover:scale-105" />
+                  <img src={m.img.src} alt={m.name} className="h-full w-full object-cover transition duration-700 hover:scale-105" />
                 </div>
                 <div className="md:col-span-8 flex flex-col justify-center">
                   <div className="flex flex-wrap gap-2 items-center">
@@ -173,7 +164,7 @@ function AboutPage() {
               {PLANNING_TEAM.map((m) => (
                 <article key={m.name} className="group relative overflow-hidden rounded-3xl bg-ink shadow-md">
                   <img
-                    src={m.img}
+                    src={m.img.src}
                     alt={m.name}
                     loading="lazy"
                     className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105"
@@ -200,7 +191,7 @@ function AboutPage() {
               {SOCIAL_TEAM.map((m) => (
                 <article key={m.name} className="group relative overflow-hidden rounded-3xl bg-ink shadow-md">
                   <img
-                    src={m.img}
+                    src={m.img.src}
                     alt={m.name}
                     loading="lazy"
                     className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105"
@@ -217,7 +208,6 @@ function AboutPage() {
               ))}
             </div>
           </div>
-
         </div>
       </section>
 
@@ -230,7 +220,7 @@ function AboutPage() {
               <p className="mt-2 text-white/85">From Sandton to the Eastern Cape — we'd love to hear from you.</p>
             </div>
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-semibold text-primary transition hover:bg-white/90"
             >
               Contact us <ArrowRight className="h-4 w-4" />
