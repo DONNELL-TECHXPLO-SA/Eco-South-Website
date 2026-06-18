@@ -1,4 +1,4 @@
-:HL["/Eco-South-Website/_next/static/chunks/2ep3vq0iyx1w9.css","style"]
+:HL["/Eco-South-Website/_next/static/chunks/08m4h8nvt1vkj.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap","style"]
 :HL["/Eco-South-Website/_next/static/media/logo-new.05izs302b41em.png","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"-dXNkUvH6YIVzUGxEfRCl"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"WpXkiX9S3ZprrshvfUSHz"}
