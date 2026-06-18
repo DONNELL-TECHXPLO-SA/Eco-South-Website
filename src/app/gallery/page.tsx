@@ -57,16 +57,6 @@ export default function GalleryPage() {
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
-                  <div className="relative flex h-full flex-col justify-end p-6 text-white">
-                    <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-primary-glow">
-                      {p.category}
-                    </span>
-                    <h3 className="mt-2 text-lg font-semibold leading-snug sm:text-xl">{p.title}</h3>
-                    <p className="mt-1 text-xs text-white/70">
-                      {p.location} · {p.year}
-                    </p>
-                  </div>
                 </article>
               );
             })}

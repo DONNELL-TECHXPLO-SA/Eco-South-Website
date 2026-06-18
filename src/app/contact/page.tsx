@@ -79,8 +79,9 @@ export default function ContactPage() {
               <p className="mt-1 text-sm text-ink-foreground/65">Reg: 2014/08434/08</p>
 
               <ul className="mt-10 space-y-7">
-                <Info icon={MapPin} label="Address">
-                  138 West Street, Workshop 17, Sandton, 2031
+                <Info icon={MapPin} label="Locations">
+                  138 West Street, Workshop 17, Sandton, 2031<br/>
+                  ERF 183, Ntlakwe Village, Amanikwe Location, Bizana, 4800
                 </Info>
                 <Info icon={Phone} label="Cell">067 055 4646</Info>
                 <Info icon={Mail} label="Email">mawethup@ecosouth.net.za</Info>
