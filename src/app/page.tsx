@@ -2,9 +2,9 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Compass, Database, Users, Briefcase, Layers, Route, FileCheck } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import heroAerial from "@/assets/hero-aerial.jpg";
-import gallerySpatial from "@/assets/gallery-spatial-1.jpg";
-import galleryGis from "@/assets/gallery-gis-1.jpg";
-import galleryCommunity from "@/assets/gallery-community-1.jpg";
+import img0865 from "@/assets/IMG_0865.jpeg";
+import img6767 from "@/assets/IMG_6767.jpeg";
+import img1041 from "@/assets/IMG_1041.jpeg";
 
 const HERO_VIDEO = "https://cdn.jsdelivr.net/gh/Eugene-TechXplo-SA/videosforwebsites@main/Drone_flying_over_small_town_202606101031.mp4";
 
@@ -50,11 +50,11 @@ export default function HomePage() {
         <div className="container-page relative flex min-h-[100svh] flex-col justify-center pt-32 pb-24 text-white">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-primary-glow" />
-            Sandton · Eastern Cape · South Africa
+            Gauteng · Eastern Cape · South Africa
           </span>
 
           <h1 className="mt-7 max-w-4xl text-5xl font-bold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
-            Reimagine Cities,
+            Reimagine Global South Cities,
             <br />
             Towns, and <span className="text-primary-glow">Villages.</span>
           </h1>
@@ -175,21 +175,21 @@ export default function HomePage() {
           <div className="mt-12 grid gap-5 md:grid-cols-6 md:grid-rows-2">
             <FeatureCard
               className="md:col-span-4 md:row-span-2"
-              img={gallerySpatial.src}
+              img={img0865.src}
               tag="Spatial Planning"
-              title="Metropolitan Development Framework — Sandton North"
+              title="Strategic Spatial Framework — Sandton District"
             />
             <FeatureCard
               className="md:col-span-2"
-              img={galleryGis.src}
+              img={img6767.src}
               tag="GIS & Data"
-              title="Land-Use Heatmap Visualisation"
+              title="GIS Spatial Data Analytics"
             />
             <FeatureCard
               className="md:col-span-2"
-              img={galleryCommunity.src}
+              img={img1041.src}
               tag="Community"
-              title="Participatory Planning Workshop — Rural Node"
+              title="Social Facilitation Engagement — Mthatha Region"
             />
           </div>
         </div>

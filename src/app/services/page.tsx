@@ -16,7 +16,7 @@ import service3 from "@/assets/service-3-infra.jpg";
 import service4 from "@/assets/service-4-social.jpg";
 import service6 from "@/assets/service-6-rural.jpg";
 import service7 from "@/assets/service-7-pm.jpg";
-import serviceTransport from "@/assets/gallery-transport-1.jpg";
+import serviceTransport from "@/assets/IMG_7081.jpeg";
 
 export const metadata = {
   title: "Services — Eco South Partnership",
@@ -27,7 +27,7 @@ const SERVICES = [
   {
     icon: Compass,
     image: service1,
-    title: "Strategic Spatial Town Planning & Urban Regeneration",
+    title: "Strategic Spatial Framework, Town Planning, Urban Design and Architectural Services",
     items: [
       "Statutory Planning & Land Use Management (rezonings, subdivisions, township establishments)",
       "Township Economies & Integration",
@@ -87,7 +87,7 @@ const SERVICES = [
     image: service7,
     title: "Conveyancing Support Services",
     items: [
-      "Administrative, spatial and development coordination for property transactions (non-legal land administration and property transfer support)",
+      "Legal land administration and property transfer and registration of title deeds",
       "Facilitating statutory compliance for land-use planning and development approvals",
     ],
   },
