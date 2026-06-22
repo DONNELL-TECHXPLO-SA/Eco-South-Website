@@ -1,6 +1,6 @@
 import { type Metadata } from "next";
 import { type ReactNode } from "react";
-import logoCropped from "@/assets/logo-cropped.png";
+import logo from "@/assets/logo-new.png";
 import { Toaster } from "@/components/ui/sonner";
 import "../styles.css";
 
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Reimagining cities, towns and villages — spatial planning, GIS, social engineering, and infrastructure across South Africa.",
   authors: [{ name: "Eco South Partnership" }],
   icons: {
-    icon: logoCropped.src,
+    icon: logo.src,
   },
   openGraph: {
     title: "Eco South Partnership",
