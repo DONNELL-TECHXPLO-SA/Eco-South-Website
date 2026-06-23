@@ -45,8 +45,11 @@ export function Footer() {
           <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-glow">Offices</h4>
           <ul className="mt-5 space-y-4 text-sm text-ink-foreground/80">
             <li className="flex items-start gap-3">
-              <MapPin className="mt-0.5 h-4 w-4 text-primary-glow" />
-              <span>138 West Street, Workshop 17, Sandton, 2031</span>
+              <MapPin className="mt-1 h-4 w-4 text-primary-glow flex-shrink-0" />
+              <div>
+                <span>138 West Street, Workshop 17, Sandton, 2031</span>
+                <span className="block mt-2">ERF 183, Ntlakwe Village, Amanikwe Location, Bizana, 4800</span>
+              </div>
             </li>
             <li className="flex items-start gap-3">
               <Phone className="mt-0.5 h-4 w-4 text-primary-glow" />

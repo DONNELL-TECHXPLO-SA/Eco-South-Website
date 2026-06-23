@@ -168,7 +168,7 @@ export default function ContactPage() {
 
               <ul className="mt-10 space-y-7">
                 <Info icon={MapPin} label="Locations">
-                  138 West Street, Workshop 17, Sandton, 2031<br/>
+                  138 West Street, Workshop 17, Sandton, 2031<br/><br/>
                   ERF 183, Ntlakwe Village, Amanikwe Location, Bizana, 4800
                 </Info>
                 <Info icon={Phone} label="Cell">067 055 4646</Info>
