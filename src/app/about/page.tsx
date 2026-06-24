@@ -10,11 +10,11 @@ import logoUmzimvubu from "@/assets/umzimvubu-Logo.png";
 import logoAnda from "@/assets/anda-logo1.png";
 import logoHda from "@/assets/HDA-Logo-Black.png";
 import logoJpc from "@/assets/Joburg Property Company.png";
-import logoUmanyano from "@/assets/Umanyano.webp";
-import logoLesedi from "@/assets/Lesedi.jpeg";
-import logoJda from "@/assets/jda.jpg";
-import logoSbd from "@/assets/sbd.jpg";
-import logoMatjhabeng from "@/assets/matjhabeng.webp";
+import logoUmanyano from "@/assets/Umanyano.png";
+import logoLesedi from "@/assets/Lesedi.png";
+import logoJda from "@/assets/jda.png";
+import logoSbd from "@/assets/sbd.png";
+import logoMatjhabeng from "@/assets/matjhabeng.png";
 
 export const metadata = {
   title: "About Us — Eco South Partnership",
@@ -276,7 +276,7 @@ export default function AboutPage() {
                   alt={c.name}
                   title={c.name}
                   loading="lazy"
-                  className="max-h-12 max-w-[85%] object-contain transition-all duration-300 group-hover:scale-105"
+                  className="max-h-18 max-w-[95%] object-contain transition-all duration-300 group-hover:scale-105"
                 />
               </div>
             ))}
