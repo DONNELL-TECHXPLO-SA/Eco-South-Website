@@ -4,10 +4,35 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import aboutHero from "@/assets/about-hero.jpg";
 import aboutStory from "@/assets/Our Story.jpeg";
 
+// Client Logos
+import logoHarmony from "@/assets/Harmony_logo.svg";
+import logoUmzimvubu from "@/assets/umzimvubu-Logo.png";
+import logoAnda from "@/assets/anda-logo1.png";
+import logoHda from "@/assets/HDA-Logo-Black.png";
+import logoJpc from "@/assets/Joburg Property Company.png";
+import logoUmanyano from "@/assets/Umanyano.webp";
+import logoLesedi from "@/assets/Lesedi.jpeg";
+import logoJda from "@/assets/jda.jpg";
+import logoSbd from "@/assets/sbd.jpg";
+import logoMatjhabeng from "@/assets/matjhabeng.webp";
+
 export const metadata = {
   title: "About Us — Eco South Partnership",
   description: "Our story, vision, mission and team of town planners, spatial designers, and social facilitators.",
 };
+
+const CLIENTS = [
+  { img: logoHda, name: "Housing Development Agency (HDA)" },
+  { img: logoJpc, name: "Joburg Property Company" },
+  { img: logoHarmony, name: "Harmony Gold" },
+  { img: logoUmzimvubu, name: "Umzimvubu Local Municipality" },
+  { img: logoAnda, name: "Alfred Nzo Development Agency (ANDA)" },
+  { img: logoUmanyano, name: "Umanyano" },
+  { img: logoLesedi, name: "Lesedi Local Municipality" },
+  { img: logoJda, name: "Johannesburg Development Agency (JDA)" },
+  { img: logoSbd, name: "SBD" },
+  { img: logoMatjhabeng, name: "Matjhabeng Local Municipality" },
+];
 
 export default function AboutPage() {
   return (
@@ -225,6 +250,36 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Clients Section */}
+      <section className="bg-background border-t border-border">
+        <div className="container-page py-24">
+          <div className="mx-auto max-w-2xl text-center mb-16">
+            <span className="eyebrow">Trusted Partners</span>
+            <h2 className="mt-3 text-4xl font-bold leading-tight sm:text-5xl">Our Clients</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              We collaborate with leading public agencies, private entities, and municipalities across South Africa.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
+            {CLIENTS.map((c) => (
+              <div
+                key={c.name}
+                className="group flex items-center justify-center rounded-2xl border border-border bg-card p-6 h-28 shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-soft"
+              >
+                <img
+                  src={c.img.src}
+                  alt={c.name}
+                  title={c.name}
+                  loading="lazy"
+                  className="max-h-12 max-w-[85%] object-contain opacity-60 grayscale contrast-125 transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 group-hover:contrast-100"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
