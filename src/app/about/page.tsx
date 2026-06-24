@@ -269,14 +269,14 @@ export default function AboutPage() {
             {CLIENTS.map((c) => (
               <div
                 key={c.name}
-                className="group flex items-center justify-center rounded-2xl border border-border bg-card p-6 h-28 shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-soft"
+                className="group flex items-center justify-center p-6 h-28 transition-all duration-300"
               >
                 <img
                   src={c.img.src}
                   alt={c.name}
                   title={c.name}
                   loading="lazy"
-                  className="max-h-12 max-w-[85%] object-contain opacity-60 grayscale contrast-125 transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 group-hover:contrast-100"
+                  className="max-h-12 max-w-[85%] object-contain transition-all duration-300 group-hover:scale-105"
                 />
               </div>
             ))}
