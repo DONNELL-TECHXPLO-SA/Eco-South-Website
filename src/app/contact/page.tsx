@@ -176,17 +176,13 @@ export default function ContactPage() {
                 <Info icon={Clock} label="Hours">Mon – Fri · 08:00 – 17:00</Info>
               </ul>
 
-              <div className="mt-10 grid grid-cols-3 gap-4 border-t border-white/10 pt-6 text-xs text-ink-foreground/70">
+              <div className="mt-10 grid grid-cols-2 gap-4 border-t border-white/10 pt-6 text-xs text-ink-foreground/70">
                 <div>
                   <p className="font-semibold text-white">Sandton</p>
                   <p>Johannesburg</p>
                 </div>
                 <div>
-                  <p className="font-semibold text-white">East London</p>
-                  <p>Eastern Cape</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-white">Port Elizabeth</p>
+                  <p className="font-semibold text-white">Bizana</p>
                   <p>Eastern Cape</p>
                 </div>
               </div>
