@@ -38,4 +38,7 @@ out/
 # Environment variables
 .env
 
+# TS build info
+*.tsbuildinfo
+
 

@@ -4,6 +4,13 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import aboutHero from "@/assets/about-hero.jpg";
 import aboutStory from "@/assets/Our Story.jpeg";
 
+interface TeamMember {
+  name: string;
+  role: string;
+  details: string;
+  qualification?: string;
+}
+
 // Client Logos
 import logoHarmony from "@/assets/Harmony_logo.svg";
 import logoUmzimvubu from "@/assets/umzimvubu-Logo.png";
@@ -15,6 +22,9 @@ import logoLesedi from "@/assets/Lesedi.png";
 import logoJda from "@/assets/jda.png";
 import logoSbd from "@/assets/sbd.png";
 import logoMatjhabeng from "@/assets/matjhabeng.png";
+import logoIngquza from "@/assets/Ingquza_hill.png";
+import logoMatatiele from "@/assets/Matatiele.png";
+import logoOrtambo from "@/assets/ORTambo.png";
 
 export const metadata = {
   title: "About Us — Eco South Partnership",
@@ -32,6 +42,9 @@ const CLIENTS = [
   { img: logoJda, name: "Johannesburg Development Agency (JDA)" },
   { img: logoSbd, name: "SBD" },
   { img: logoMatjhabeng, name: "Matjhabeng Local Municipality" },
+  { img: logoIngquza, name: "Ingquza Hill Local Municipality" },
+  { img: logoMatatiele, name: "Matatiele Local Municipality" },
+  { img: logoOrtambo, name: "O.R. Tambo District Municipality" },
 ];
 
 export default function AboutPage() {
@@ -209,14 +222,15 @@ export default function AboutPage() {
                       Town Planning Core
                     </h3>
                     <div className="space-y-4">
-                      {[
+                      {([
                         { name: "Nelisiwe Ngcobo", role: "Town Planner", details: "Land use management, Policy formulation, and compliance " },
                         { name: "Siyabonga Ncube", role: "Town Planner", details: "GIS mapping, Land Use Management, Policy Formulation and compliance " },
-                        { name: "Simphiwe Mnguni", role: "Town Planner", details: "Urban design, Land use management policy formulation, and compliance, Operations management" },
-                      ].map((m) => (
+                        { name: "Simphiwe Mnguni", role: "Town Planner", details: "Urban Design, Land Use Management, Policy Formulation and Operations Management" },
+                      ] as TeamMember[]).map((m) => (
                         <div key={m.name} className="group p-4 rounded-xl border border-border/60 bg-background/50 hover:bg-background hover:border-primary/20 transition-all duration-300">
                           <h4 className="font-semibold text-foreground text-sm">{m.name}</h4>
                           <p className="text-[11px] font-medium text-primary mt-0.5">{m.role}</p>
+                          {m.qualification && <p className="text-[11px] text-muted-foreground mt-0.5">{m.qualification}</p>}
                           <p className="text-[10px] text-muted-foreground mt-1.5 leading-relaxed">{m.details}</p>
                         </div>
                       ))}
@@ -235,13 +249,14 @@ export default function AboutPage() {
                       Social Facilitation Core
                     </h3>
                     <div className="space-y-4">
-                      {[
+                      {([
                         { name: "Zimasa Ncobela", role: "Social Facilitator", details: "Community Engagement & Participatory Forums" },
-                        { name: "Ndumiso Pepu", role: "Social Facilitator", details: "Stakeholder Relations & Field Operations" },
-                      ].map((m) => (
+                        { name: "Ndumiso Pepu", role: "Social Facilitator", details: "Stakeholder Relations & Field Operations", qualification: "BSc Agric Soil Science" },
+                      ] as TeamMember[]).map((m) => (
                         <div key={m.name} className="group p-4 rounded-xl border border-border/60 bg-background/50 hover:bg-background hover:border-emerald-600/20 transition-all duration-300">
                           <h4 className="font-semibold text-foreground text-sm">{m.name}</h4>
                           <p className="text-[11px] font-medium text-emerald-700 mt-0.5">{m.role}</p>
+                          {m.qualification && <p className="text-[11px] text-muted-foreground mt-0.5">{m.qualification}</p>}
                           <p className="text-[10px] text-muted-foreground mt-1.5 leading-relaxed">{m.details}</p>
                         </div>
                       ))}

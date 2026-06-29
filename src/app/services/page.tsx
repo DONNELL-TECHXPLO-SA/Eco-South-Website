@@ -13,10 +13,10 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import service1 from "@/assets/service-1-spatial.jpg";
 import service2 from "@/assets/service-2-gis.jpg";
 import service3 from "@/assets/service-3-infra.jpg";
-import service4 from "@/assets/service-4-social.jpg";
+import service4 from "@/assets/service-4-social.jpeg";
 import service6 from "@/assets/service-6-rural.jpg";
 import service7 from "@/assets/service-7-pm.jpg";
-import serviceTransport from "@/assets/IMG_7081.jpeg";
+import serviceTransport from "@/assets/transport.jpeg";
 
 export const metadata = {
   title: "Services — Eco South Partnership",
